@@ -1,1 +1,1 @@
-# This website is under construction. Please, visit: https://github.com/thomaswpp/mpquic-sbd
+# The source files for the MPQUIC-SBD website.
