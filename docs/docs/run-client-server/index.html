@@ -10,23 +10,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>MPQUIC-SBD</title>
-<meta name="description" content="A MultiPath QUIC extension with RFC8382 SBD adapted for video streaming.">
+<!-- begin _includes/seo.html --><title>Run the video server application - MPQUIC-SBD</title>
+<meta name="description" content="Instructions for running the AStream client player emulator and Caddy video server">
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="MPQUIC-SBD">
-<meta property="og:title" content="MPQUIC-SBD">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Run the video server application">
+<meta property="og:url" content="http://localhost:4000/docs/run-client-server/">
 
 
-  <meta property="og:description" content="A MultiPath QUIC extension with RFC8382 SBD adapted for video streaming.">
-
-
-
-  <meta property="og:image" content="http://localhost:4000/assets/images/mm-home-page-feature.jpg">
+  <meta property="og:description" content="Instructions for running the AStream client player emulator and Caddy video server">
 
 
 
@@ -34,23 +30,17 @@
 
 
 
-
-
-
-<link rel="canonical" href="http://localhost:4000/">
+  <meta property="article:published_time" content="2024-12-26T18:16:21-05:00">
 
 
 
 
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-    "name": "",
-    "url": "http://localhost:4000/"
-}
-</script>
+
+<link rel="canonical" href="http://localhost:4000/docs/run-client-server/">
+
+
+
 
 
 
@@ -89,7 +79,7 @@
 
   </head>
 
-  <body class="layout--splash" dir="ltr">
+  <body class="layout--single" dir="ltr">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -153,64 +143,167 @@
 
     <div class="initial-content">
       
-  
 
 
-
-
-
-
-
-<div class="page__hero--overlay"
-  style="background-color: #5e616c; background-image: url('/assets/images/mm-home-page-feature.jpg');"
->
-  
-    <div class="wrapper">
-      <h1 id="page-title" class="page__title" itemprop="headline">
-        
-          MPQUIC-SBD
-
-        
-      </h1>
-      
-        <p class="page__lead">A <a href="https://multipath-quic.org/">MultiPath QUIC</a> extension with <a href="https://datatracker.ietf.org/doc/html/rfc8382">RFC8382 SBD</a> adapted for video streaming.<br />
-</p>
-      
-      
-
-
-      
-        <p>
-        
-          <a href="/docs/quick-start-guide/" class="btn btn--light-outline btn--large"><i class='fas fa-download'></i> Install now</a>
-        
-        </p>
-      
-    </div>
-  
-  
-</div>
 
 
 
 <div id="main" role="main">
-  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+  
+  <div class="sidebar sticky">
+  
+  
     
-    <meta itemprop="description" content="A MultiPath QUIC extension with RFC8382 SBD adapted for video streaming.">
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Getting Started</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/docs/installation/">Install the experimental setup</a></li>
+            
+              <li><a href="/docs/video/">Prepare the video files</a></li>
+            
+              <li><a href="/docs/video-server/">Configure the video server</a></li>
+            
+              <li><a href="/docs/run-client-server/" class="active">Run the video server application</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Run the video server application">
+    <meta itemprop="description" content="Instructions for running the AStream client player emulator and Caddy video server">
     
     
 
-    <section class="page__content" itemprop="text">
+    <div class="page__inner-wrap">
       
-<div class="feature__wrapper">
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/docs/run-client-server/" itemprop="url">Run the video server application
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#running-the-application">Running the application</a><ul><li><a href="#step-1-run-the-vagrant-vm">Step 1: Run the Vagrant VM</a></li><li><a href="#step-2-run-the-video-server-caddy-web-server">Step 2: Run the video server (Caddy web server)</a></li><li><a href="#step-3-run-the-client-player-astream-emulator">Step 3: Run the client player (AStream emulator)</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <h3 id="running-the-application">Running the application</h3>
+
+<hr />
+<h4 id="step-1-run-the-vagrant-vm">Step 1: Run the Vagrant VM</h4>
+
+<p>Assuming the <code class="language-plaintext highlighter-rouge">mpquic-sbd-vagrant</code> folder is located in your <code class="language-plaintext highlighter-rouge">/home/&lt;user&gt;/</code> directory, navigate to the <code class="language-plaintext highlighter-rouge">VBox</code> folder, reload the virtual machine, and connect to it. To do so, run the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> ~
+ <span class="nb">cd </span>mpquic-sbd-vagrant/VBox
+ vagrant reload
+ vagrant ssh
+</code></pre></div></div>
+
+<hr />
+<h4 id="step-2-run-the-video-server-caddy-web-server">Step 2: Run the video server (<code class="language-plaintext highlighter-rouge">Caddy</code> web server)</h4>
+
+<p>Inside the Vagrant VM, run the server from <code class="language-plaintext highlighter-rouge">src/dash/caddy</code> at the <code class="language-plaintext highlighter-rouge">/Workstation/mpquic-sbd</code> folder.</p>
+
+<p>For a single-path transport over QUIC protocol, run the video server with:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> /Workstation/mpquic-sbd/src/dash/caddy
+ ./caddy <span class="nt">-quic</span>
+</code></pre></div></div>
+
+<p>For a multi-path transport over MPQUIC protocol, run the video server with:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> /Workstation/mpquic-sbd/src/dash/caddy
+ ./caddy <span class="nt">-quic</span> <span class="nt">-mp</span>
+</code></pre></div></div>
+
+<hr />
+<h4 id="step-3-run-the-client-player-astream-emulator">Step 3: Run the client player (<code class="language-plaintext highlighter-rouge">AStream</code> emulator)</h4>
+
+<p>Inside the Vagrant VM, run the AStream from <code class="language-plaintext highlighter-rouge">src/AStream</code>.</p>
+
+<p>For a single-path client over QUIC protocol:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> /Workstation/mpquic-sbd/src
+ python AStream/dist/client/dash_client.py <span class="se">\</span>
+    <span class="nt">-m</span> <span class="s2">"&lt;SERVER's URL TO MPD&gt;"</span> <span class="nt">-p</span> <span class="s1">'basic'</span> <span class="nt">-q</span>
+</code></pre></div></div>
+
+<p>For a multi-path client over MPQUIC protocol:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd</span> /Workstation/mpquic-sbd/src
+ python AStream/dist/client/dash_client.py <span class="se">\</span>
+     <span class="nt">-m</span> <span class="s2">"&lt;SERVER's URL TO MPD&gt;"</span> <span class="nt">-p</span> <span class="s1">'basic'</span> <span class="nt">-q</span> <span class="nt">-mp</span>
+</code></pre></div></div>
+<p class="notice--warning"><strong>Note:</strong> The <code class="language-plaintext highlighter-rouge">-p</code> parameter specifies the ABR algorithm, where <code class="language-plaintext highlighter-rouge">basic</code> represents the throughput-based ABR. The <code class="language-plaintext highlighter-rouge">&lt;SERVER's URL TO MPD&gt;</code> parameter must be enclosed in double quotes, like this: <code class="language-plaintext highlighter-rouge">"https://localhost:4242/output_dash.mpd"</code></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/docs/prepared-vm/" class="pagination--pager" title="1:">Previous</a>
+    
+    
+      <a href="/docs/video-server/" class="pagination--pager" title="Configure the video server">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
 
   
-
-</div>
-
-
-    </section>
-  </article>
+  
 </div>
 
       
