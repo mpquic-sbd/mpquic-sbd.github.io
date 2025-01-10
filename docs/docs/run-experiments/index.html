@@ -1,0 +1,480 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Run the experiments - MPQUIC-SBD</title>
+<meta name="description" content="Instructions for running the video application experiments.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="MPQUIC-SBD">
+<meta property="og:title" content="Run the experiments">
+<meta property="og:url" content="http://localhost:4000/docs/run-experiments/">
+
+
+  <meta property="og:description" content="Instructions for running the video application experiments.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-logo.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-10T13:53:53-03:00">
+
+
+
+  <meta property="article:modified_time" content="2025-01-09T21:00:00-03:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/docs/run-experiments/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="MPQUIC-SBD Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          MPQUIC-SBD
+          <span class="site-subtitle">MultiPath QUIC with Shared Bottleneck Detection</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/docs/artifacts/"
+                
+                
+              >Software Artifacts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/publications/"
+                
+                
+              >Publications</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/acknowledgement/"
+                
+                
+              >Acknowledgement</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Getting Started</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/docs/installation/">Install the experimental setup</a></li>
+            
+              <li><a href="/docs/video/">Prepare the video files</a></li>
+            
+              <li><a href="/docs/video-application/">Configure the video application</a></li>
+            
+              <li><a href="/docs/run-experiments/" class="active">Run the experiments</a></li>
+            
+              <li><a href="/docs/results/">Verify the experimental results</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Run the experiments">
+    <meta itemprop="description" content="Instructions for running the video application experiments.">
+    
+    <meta itemprop="dateModified" content="2025-01-09T21:00:00-03:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/docs/run-experiments/" itemprop="url">Run the experiments
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#network-scenarios-on-the-mininet-emulator">Network scenarios on the Mininet emulator</a><ul><li><a href="#run-the-vagrant-vm">Run the Vagrant VM</a></li><li><a href="#run-the-mpquic-sbd-experiments">Run the MPQUIC-SBD experiments</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <h3 id="network-scenarios-on-the-mininet-emulator">Network scenarios on the Mininet emulator</h3>
+
+<p>In our experiments (refer to our <a href="/docs/publication/">publications</a>), we focus on network scenarios where a multi-homed client (<code class="language-plaintext highlighter-rouge">AStream</code> DASH player) is connected to two access networks, while at the other end, the video server (<code class="language-plaintext highlighter-rouge">Caddy</code> web server) is connected to a single access network. This setup results in an MPQUIC session with two paths between the DASH client and the video server.</p>
+
+<div class="notice--info">
+<p><strong>Note:</strong> 
+We implemented three network scenarios using the Mininet emulator (Python scripts are available on your host in <code class="language-plaintext highlighter-rouge">~/mpquic-sbd-vagrant/Workspace/mpquic-sbd/network/mininet/</code>). In these scenarios, the paths between the client and server are configured as follows:</p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;1&gt;</code>: NSB (Non-Shared Bottlenecks):</strong> Each path traverses a distinct bottleneck link, meaning they do not share network resources.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;2&gt;</code>: SB (Shared Bottleneck):</strong> Both paths flow through the same bottleneck link, sharing the same network resource.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;3&gt;</code>: SHIFT (Shifting SB-NSB):</strong> The bottlenecks alternate between SB and NSB every 40 seconds during the MPQUIC session.</li>
+</ul>
+</div>
+
+<hr />
+<h4 id="run-the-vagrant-vm">Run the Vagrant VM</h4>
+
+<p>On your host, navigate to the <code class="language-plaintext highlighter-rouge">~/mpquic-sbd-vagrant/VBox</code> folder, reload the virtual machine, and connect to it.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre> <span class="nb">cd</span> ~/mpquic-sbd-vagrant/VBox
+ vagrant reload
+ vagrant ssh
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+<h4 id="run-the-mpquic-sbd-experiments">Run the MPQUIC-SBD experiments</h4>
+
+<p>To run our experiments with MPQUIC-SBD on Mininet emulator:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Workspace/mpquic-sbd/
+<span class="nb">sudo </span>python network/mininet/build_mininet_router&lt;scenario&gt;.py <span class="nt">-nm</span> 2 <span class="nt">-p</span> <span class="s1">'&lt;ABR&gt;'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Where:</p>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">&lt;scenario&gt;</code></strong>: Specifies the number of the desired experiment. Enter <code class="language-plaintext highlighter-rouge">1</code> for NSB, <code class="language-plaintext highlighter-rouge">2</code> for SB, or <code class="language-plaintext highlighter-rouge">3</code> for SHIFT.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">-nm</code></strong>: Indicates the number of network interface controllers for the client. Unless you have modified the network scenarios, always enter <code class="language-plaintext highlighter-rouge">2</code>, as the client is dual-homed in our experiments.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">-p</code></strong>: Specifies the ABR (Adaptive Bitrate) algorithm to use with the client DASH player (<code class="language-plaintext highlighter-rouge">AStream</code>). The available ABR algorithm implementations in <code class="language-plaintext highlighter-rouge">AStream</code> are: <code class="language-plaintext highlighter-rouge">'basic'</code>, a throughput-based algorithm (TBA); <code class="language-plaintext highlighter-rouge">'netflix'</code>, a buffer-based algorithm (BBA); and <code class="language-plaintext highlighter-rouge">'sara'</code>, a hybrid TBA/BBA algorithm.</li>
+</ul>
+
+<p>For example, for you to run an experiment considering NSB scenario and the BBA ABR:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Workspace/mpquic-sbd/
+<span class="nb">sudo </span>python network/mininet/build_mininet_router1.py <span class="nt">-nm</span> 2 <span class="nt">-p</span> <span class="s1">'netflix'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="notice--info">
+<ul>
+  <li><strong>What happens:</strong> When running the <code class="language-plaintext highlighter-rouge">build_mininet_router*.py</code> scripts, you will first see command-line output from the <code class="language-plaintext highlighter-rouge">mininet</code> emulator as it creates the network topology. Then, the terminal prompt remains be blocked while <code class="language-plaintext highlighter-rouge">mininet</code> starts and runs the application processes (e.g., D-ITG background traffic, the <code class="language-plaintext highlighter-rouge">caddy</code> web server, and the <code class="language-plaintext highlighter-rouge">AStream</code> player). Once these processes are completed and the experiment is finished, the prompt (<code class="language-plaintext highlighter-rouge">mininet&gt; </code>) will return. At this point, you can exit <code class="language-plaintext highlighter-rouge">mininet</code> by typing <code class="language-plaintext highlighter-rouge">exit</code>.</li>
+  <li><strong>Monitor the log output files:</strong> Since the <code class="language-plaintext highlighter-rouge">~/mpquic-sbd-vagrant/Workspace/</code> folder on your host is mapped to the <code class="language-plaintext highlighter-rouge">/home/vagrant/Workspace</code> folder in the Vagrant VM, you can monitor the experiment’s output files in real-time while the Vagrant terminal is blocked with <code class="language-plaintext highlighter-rouge">mininet</code>. To do this, open another terminal on your host and navigate to the folder containing the output logs:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/mpquic-sbd-vagrant/Workspace/mpquic-sbd/log/
+<span class="nb">tail</span> <span class="nt">-f</span> &lt;log file&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-10">January 10, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/docs/video-application/" class="pagination--pager" title="Configure the video application">Previous</a>
+    
+    
+      <a href="/docs/results/" class="pagination--pager" title="Verify the experimental results">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      <div align="center" style="margin: 1em 0;">
+  <ins class="adsbygoogle"
+        style="display:block; border-bottom: initial;"
+        data-ad-client="ca-pub-7328585512091257"
+        data-ad-slot="3049671934"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/thomaswpp/mpquic-sbd" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">MPQUIC-SBD</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+// Including InstantSearch.js library and styling
+const loadSearch = function() {
+  const loadCSS = function(src) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = src;
+    link.media = 'all';
+    document.head.appendChild(link);
+  };
+
+  var script = document.createElement('script');
+  script.setAttribute("type", "text/javascript");
+  script.setAttribute("src", "https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js");
+  script.addEventListener("load", function() {
+    // Instantiating InstantSearch.js with Algolia credentials
+    const search = instantsearch({
+      appId: '',
+      apiKey: '',
+      indexName: '',
+      searchParameters: {
+        restrictSearchableAttributes: ['title', 'content']
+      }
+    });
+
+    const hitTemplate = function(hit) {
+      const url = hit.url;
+      const hightlight = hit._highlightResult;
+      const title = hightlight.title && hightlight.title.value  || "";
+      const content = hightlight.html && hightlight.html.value  || "";
+
+      return `
+        <div class="list__item">
+          <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+            <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+            <div class="archive__item-excerpt" itemprop="description">${content}</div>
+          </article>
+        </div>
+      `;
+    }
+
+    // Adding searchbar and results widgets
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '.search-searchbar',
+        poweredBy: true,
+        placeholder: 'Enter your search term...'
+      })
+    );
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '.search-hits',
+        templates: {
+          item: hitTemplate,
+          empty: 'No results',
+        }
+      })
+    );
+
+    if (!search.started) {
+      search.start();
+    }
+  });
+  document.body.appendChild(script);
+
+  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css");
+  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css");
+};
+
+// Starting the search only when toggle is clicked
+$(document).ready(function() {
+  var scriptLoaded = false;
+
+  $(".search__toggle").on("click", function() {
+    if (!scriptLoaded) {
+      loadSearch();
+      scriptLoaded = true;
+    }
+  });
+});
+</script>
+
+
+
+
+<style>
+.google-auto-placed {
+  margin: 2em auto;
+}
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+
+
+  </body>
+</html>

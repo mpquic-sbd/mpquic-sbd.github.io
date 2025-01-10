@@ -1,0 +1,586 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Prepare the video files - MPQUIC-SBD</title>
+<meta name="description" content="Instructions for running the Vagrant VM.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="MPQUIC-SBD">
+<meta property="og:title" content="Prepare the video files">
+<meta property="og:url" content="http://localhost:4000/docs/video/">
+
+
+  <meta property="og:description" content="Instructions for running the Vagrant VM.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-logo.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-10T13:53:53-03:00">
+
+
+
+  <meta property="article:modified_time" content="2025-01-01T21:00:00-03:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/docs/video/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="MPQUIC-SBD Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          MPQUIC-SBD
+          <span class="site-subtitle">MultiPath QUIC with Shared Bottleneck Detection</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/docs/artifacts/"
+                
+                
+              >Software Artifacts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/publications/"
+                
+                
+              >Publications</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/acknowledgement/"
+                
+                
+              >Acknowledgement</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Getting Started</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/docs/installation/">Install the experimental setup</a></li>
+            
+              <li><a href="/docs/video/" class="active">Prepare the video files</a></li>
+            
+              <li><a href="/docs/video-application/">Configure the video application</a></li>
+            
+              <li><a href="/docs/run-experiments/">Run the experiments</a></li>
+            
+              <li><a href="/docs/results/">Verify the experimental results</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Prepare the video files">
+    <meta itemprop="description" content="Instructions for running the Vagrant VM.">
+    
+    <meta itemprop="dateModified" content="2025-01-01T21:00:00-03:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/docs/video/" itemprop="url">Prepare the video files
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#offline-processing-of-video-segments">Offline processing of video segments</a><ul><li><a href="#step-1-requirements">Step 1: Requirements</a></li><li><a href="#step-2-download-and-process-the-video">Step 2: Download and process the video</a></li><li><a href="#step-3-split-the-processed-video-into-segments">Step 3: Split the processed video into segments</a></li><li><a href="#step-4-check-the-location-of-the-video-files">Step 4: Check the location of the video files</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        
+<div class="notice--danger">
+<blockquote>
+  <p><strong>DISCLAIMER:</strong></p>
+  <ol>
+    <li><strong>We do not have any rights to the video content.</strong></li>
+    <li>All video content must be selected from sources of your choice.</li>
+    <li>The MPQUIC-SBD repositories provide video scripts only for processing user-provided video content by encoding it and splitting it into segments of varying quality levels.</li>
+  </ol>
+</blockquote>
+</div>
+
+<div class="notice--info">
+<p><strong>Notes:</strong></p>
+<ul>
+  <li><strong>Example of video source</strong>: Freely licensed video content can be found in public domain repositories such as <a href="https://commons.wikimedia.org/wiki/Category:Videos"><strong>Wikimedia</strong></a>.</li>
+  <li><strong>Warning on video preparation</strong>: This is an offline process that may <strong>take a significant amount of time</strong>, depending on the video’s length and the desired quality. We recommend performing this process outside the Vagrant VM, e.g., directly on your host.</li>
+  <li><strong>Information on reproducibility</strong>: In our experiments (refer to our <a href="/publications/"><strong>publications</strong></a>), we use a 4K (3840 x 2160), 60 fps video file, 50 minutes in length, which is encoded in 11 different qualities and split into 2-, 4-, and 10-second segments.</li>
+</ul>
+</div>
+
+<hr />
+<h3 id="offline-processing-of-video-segments">Offline processing of video segments</h3>
+
+<h4 id="step-1-requirements">Step 1: Requirements</h4>
+
+<p>First, install <a href="https://www.ffmpeg.org/"><code class="language-plaintext highlighter-rouge">ffmpeg</code></a> and GPAC’s <a href="https://wiki.gpac.io/MP4Box/MP4Box/"><code class="language-plaintext highlighter-rouge">MP4Box</code></a> on your host system.</p>
+
+<p>Run on your host:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> ffmpeg gpac
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="notice--warning">
+<p><strong>Install <code class="language-plaintext highlighter-rouge">ffmpeg</code> and <code class="language-plaintext highlighter-rouge">gpac</code> using your package manager, as shown in the commands above. Just for reference, the versions we used were:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Ubuntu 18.04.6 LTS</code></li>
+  <li><code class="language-plaintext highlighter-rouge">gcc 6.5.0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MP4Box 0.5.2-426-gc5ad4e4+dfsg5-3ubuntu0.1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ffmpeg 7:3.4.11-0ubuntu0.1</code></li>
+</ul>
+</div>
+
+<p>Then, navigate to the <code class="language-plaintext highlighter-rouge">mpquic-sbd-vagrant/Workspace</code> folder and download our video processing scripts from our <a href="https://github.com/mpquic-sbd/video">repository</a> by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/mpquic-sbd-vagrant/Workspace
+git clone https://github.com/mpquic-sbd/video.git 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Navigate to the <code class="language-plaintext highlighter-rouge">mpquic-sbd-vagrant/Workspace/video</code> folder, where you will find the following Python scripts:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>~/mpquic-sbd-vagrant/Workspace/video
+├── video_download_process.py <span class="c"># downloads (wget) and processes (ffmpeg) a video file</span>
+├── video_sara_mpd.py         <span class="c"># creates an MPD file for the SARA ABR format</span>
+├── video_split.py            <span class="c"># splits the processed videos into the desired segment length (in seconds)</span>
+├── video_utils.py            <span class="c"># set of functions used to download, process, and split video files </span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+<h4 id="step-2-download-and-process-the-video">Step 2: Download and process the video</h4>
+
+<p>The script <code class="language-plaintext highlighter-rouge">video_download_process.py</code> downloads and processes a video file (WEBM or MP4). Using <code class="language-plaintext highlighter-rouge">ffmpeg</code>, the original video is encoded into 11 different quality levels, as done in our experiments (refer to our <a href="/publications/"><strong>publications</strong></a>).</p>
+
+<p>In the <code class="language-plaintext highlighter-rouge">mpquic-sbd-vagrant/Workspace/video</code> folder, download and process the video by running:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/mpquic-sbd-vagrant/Workspace/video
+python3 video_download_process.py &lt;video file URL&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For example, the Wikimedia’s video <a href="https://commons.wikimedia.org/wiki/File:Walking_in_LONDON_-_England_(UK)_-_Westminster_to_Piccadilly_Circus_(2019)_-_4K_60fps_(UHD).webm"><code class="language-plaintext highlighter-rouge">File:Walking in LONDON - England (UK) - Westminster to Piccadilly Circus (2019) - 4K 60fps (UHD).webm</code></a> is a 4K, 60fps, 50+ minute video, which can be easily downloaded and processed as follows (<strong>note that this process may take several hours to complete</strong>):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/mpquic-sbd-vagrant/Workspace/video
+python3 video_download_process.py https://upload.wikimedia.org/wikipedia/commons/b/bf/Walking_in_LONDON_-_England_%28UK%29_-_Westminster_to_Piccadilly_Circus_%282019%29_-_4K_60fps_%28UHD%29.webm
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">video_download_process.py</code> script is expected to produce the following output files:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>~/mpquic-sbd-vagrant/Workspace/video
+├── downloaded_video.webm   <span class="c"># original downloaded video file</span>
+├── video_21602p_60_fps.mp4 <span class="c"># q1:  processed video with 60 fps, 3840x2160  </span>
+├── video_2160p_30_fps.mp4  <span class="c"># q2:  processed video with 30 fps, 3840x2160 </span>
+├── video_14402p_60_fps.mp4 <span class="c"># q3:  processed video with 60 fps, 2560x1440</span>
+├── video_1440p_30_fps.mp4  <span class="c"># q4:  processed video with 30 fps, 2560x1440</span>
+├── video_10802p_60_fps.mp4 <span class="c"># q5:  processed video with 60 fps, 1920x1080</span>
+├── video_1080p_25_fps.mp4  <span class="c"># q6:  processed video with 25 fps, 1920x1080 </span>
+├── video_7202p_60_fps.mp4  <span class="c"># q7:  processed video with 60 fps, 1280x720   </span>
+├── video_720p_25_fps.mp4   <span class="c"># q8:  processed video with 25 fps, 1280x720  </span>
+├── video_480p_25_fps.mp4   <span class="c"># q9:  processed video with 25 fps, 854x480</span>
+├── video_360p_25_fps.mp4   <span class="c"># q10: processed video with 25 fps, 640x360</span>
+├── video_240p_25_fps.mp4   <span class="c"># q11: processed video with 25 fps, 426x240</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="notice--danger"><strong>Warning: do not change the file names,</strong> as it causes the other scripts to fail.</p>
+
+<hr />
+<h4 id="step-3-split-the-processed-video-into-segments">Step 3: Split the processed video into segments</h4>
+
+<p>The script <code class="language-plaintext highlighter-rouge">video_split.py</code> uses <code class="language-plaintext highlighter-rouge">MP4Box</code> to split the entire video file into chunks, i.e., segments in sequence, each containing a few seconds of the video. In our experiments (refer to our <a href="/publications/"><strong>publications</strong></a>), we split the video into 2-, 4-, and 10-second segments. To do this, run the following commands:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/mpquic-sbd-vagrant/Workspace/video
+python3  video_split.py  2
+python3  video_split.py  4
+python3  video_split.py  10
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In addition to the original downloaded video (<code class="language-plaintext highlighter-rouge">downloaded_video.webm</code>) and the processed videos in 11 different qualities (<code class="language-plaintext highlighter-rouge">video_*.mp4</code>), the <code class="language-plaintext highlighter-rouge">video_split.py</code> script is expected to produce the following outputs:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>mpquic-sbd-vagrant/Workspace/video
+├── 2s                    <span class="c"># folder for 2-second segments</span>
+|   └── output_dash.mpd   <span class="c"># MPD manifest file describing all 2-second video segments and qualities</span>
+|   └── output_dash2.mpd  <span class="c"># MPD manifest file adapted for the SARA ABR algorithm</span>
+|   └── segment_<span class="k">*</span>.m4s     <span class="c"># A number of video files containing 2-seconds segments</span>
+├── 4s                    <span class="c"># folder for 4-second segments</span>
+|   └── ...               <span class="c"># MPD files and segments as in the 2s folder</span>
+├── 10s                   <span class="c"># folder for 10-second segments</span>
+|   └── ...               <span class="c"># MPD files and segments as in the 2s folder</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="notice--danger"><strong>Warning: do not change the file names,</strong> as it causes the video streaming application to fail.</p>
+
+<hr />
+<h4 id="step-4-check-the-location-of-the-video-files">Step 4: Check the location of the video files</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">~/mpquic-sbd-vagrant/Workspace</code> folder is shared between your host and the Vagrant VM. Ensure that the MPQUIC-SBD experimental setup and the video files are placed in this folder. Inside your <code class="language-plaintext highlighter-rouge">~/mpquic-sbd-vagrant/Workspace</code>, you should see two folders:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>mpquic-sbd-vagrant
+├── Workspace/
+|   ├── mpquic-sbd/   <span class="c"># source files of the experimental setup</span>
+|   ├── video/        <span class="c"># the folder storing the video files</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<hr />
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-02">January 2, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/docs/installation/" class="pagination--pager" title="Install the Experimental Setup">Previous</a>
+    
+    
+      <a href="/docs/video-application/" class="pagination--pager" title="Configure the video application">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      <div align="center" style="margin: 1em 0;">
+  <ins class="adsbygoogle"
+        style="display:block; border-bottom: initial;"
+        data-ad-client="ca-pub-7328585512091257"
+        data-ad-slot="3049671934"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/thomaswpp/mpquic-sbd" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">MPQUIC-SBD</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+// Including InstantSearch.js library and styling
+const loadSearch = function() {
+  const loadCSS = function(src) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = src;
+    link.media = 'all';
+    document.head.appendChild(link);
+  };
+
+  var script = document.createElement('script');
+  script.setAttribute("type", "text/javascript");
+  script.setAttribute("src", "https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js");
+  script.addEventListener("load", function() {
+    // Instantiating InstantSearch.js with Algolia credentials
+    const search = instantsearch({
+      appId: '',
+      apiKey: '',
+      indexName: '',
+      searchParameters: {
+        restrictSearchableAttributes: ['title', 'content']
+      }
+    });
+
+    const hitTemplate = function(hit) {
+      const url = hit.url;
+      const hightlight = hit._highlightResult;
+      const title = hightlight.title && hightlight.title.value  || "";
+      const content = hightlight.html && hightlight.html.value  || "";
+
+      return `
+        <div class="list__item">
+          <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+            <h2 class="archive__item-title" itemprop="headline"><a href="/${url}">${title}</a></h2>
+            <div class="archive__item-excerpt" itemprop="description">${content}</div>
+          </article>
+        </div>
+      `;
+    }
+
+    // Adding searchbar and results widgets
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '.search-searchbar',
+        poweredBy: true,
+        placeholder: 'Enter your search term...'
+      })
+    );
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '.search-hits',
+        templates: {
+          item: hitTemplate,
+          empty: 'No results',
+        }
+      })
+    );
+
+    if (!search.started) {
+      search.start();
+    }
+  });
+  document.body.appendChild(script);
+
+  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css");
+  loadCSS("https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css");
+};
+
+// Starting the search only when toggle is clicked
+$(document).ready(function() {
+  var scriptLoaded = false;
+
+  $(".search__toggle").on("click", function() {
+    if (!scriptLoaded) {
+      loadSearch();
+      scriptLoaded = true;
+    }
+  });
+});
+</script>
+
+
+
+
+<style>
+.google-auto-placed {
+  margin: 2em auto;
+}
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+
+
+  </body>
+</html>
